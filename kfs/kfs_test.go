@@ -31,10 +31,10 @@ func (s *KfsTestsSuite) SetupTest() {
 	}
 	s.path = path
 	config := kfs.NewKfsConfig()
-	config.RemovalTime = 0
+	config.RemovalTime.SetDuration(0)
 	if s.inMemory {
 		config.Basedir = kfs.INMEMORY
-		config.RemovalTime = 0
+		config.RemovalTime.SetDuration(0)
 	} else {
 		config.Basedir = path
 	}
